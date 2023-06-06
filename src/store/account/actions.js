@@ -29,4 +29,18 @@ export default {
         }
       });
   },
+  requestLoginToSpringRefactoring({}, payload) {
+    const { email, password } = payload;
+    return axiosInst
+      .post("/account/login", { email, password })
+      .then((res) => {
+        if (res.data != null) {
+          alert("로그인 성공!");
+          let userToken = res.data.userToken;
+          localStorage.setItem("loginUserToken", userToken);
+        } else {
+          alert("로그인 실패!");
+        }
+      });
+  }
 };

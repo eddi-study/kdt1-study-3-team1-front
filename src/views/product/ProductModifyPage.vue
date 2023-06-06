@@ -36,9 +36,9 @@ export default {
             productModule, ['requestProductToSpring', 'requestProductModifyToSpring']
         ),
         async onSubmit (payload) {
-            const { productName, productPrice, productId, accountId } = payload
+            const { productName, productPrice, productId, userToken } = payload
 
-            await this.requestProductModifyToSpring({ productName, productPrice, productId, accountId})
+            await this.requestProductModifyToSpring({ productName, productPrice, productId, userToken})
             await this.$router.push({
                 name: 'ProductReadPage',
                 params: { productId: this.productId }

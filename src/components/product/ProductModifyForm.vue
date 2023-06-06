@@ -47,7 +47,7 @@ export default {
             productName: '',
             productPrice: '',
             productId: '',
-            accountId: localStorage.getItem('loginUserId')
+            userToken: localStorage.getItem('loginUserToken')
         }
     },
     created () {
@@ -57,8 +57,8 @@ export default {
     },
     methods: {
         onSubmit () {
-            const { accountId, productId, productName, productPrice } = this
-            this.$emit('submit', { accountId, productId, productName, productPrice})
+            const { userToken, productId, productName, productPrice } = this
+            this.$emit('submit', { userToken, productId, productName, productPrice})
         }
     }
 }

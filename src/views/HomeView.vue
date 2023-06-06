@@ -26,14 +26,14 @@ export default {
     LoginForm,
   },
   methods: {
-    ...mapActions(accountModule, ["requestLoginToSpring"]),
+    ...mapActions(accountModule, ["requestLoginToSpringRefactoring"]),
     async login(payload) {
-      await this.requestLoginToSpring(payload);
+      await this.requestLoginToSpringRefactoring(payload);
       location.reload();
     },
   },
   mounted() {
-    if (localStorage.getItem("loginUserId") == null) {
+    if (localStorage.getItem("loginUserToken") == null) {
       this.isLoggedIn = false;
     } else {
       this.isLoggedIn = true;
