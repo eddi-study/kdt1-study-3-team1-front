@@ -23,9 +23,9 @@ export default {
     },
     requestRegisterProductToSpring ({}, payload) {
 
-        const { productName, productPrice, accountId } = payload
+        const { productName, productPrice, userToken } = payload
 
-        return axiosInst.post('/product/product-register', { productName, productPrice, accountId})
+        return axiosInst.post('/product/product-register', { productName, productPrice, userToken})
         .then((res) => {
             alert('상품 등록 성공!')
             return res
@@ -47,9 +47,9 @@ export default {
             })
     },
     requestProductModifyToSpring({}, payload) {
-        const { productId, productName, productPrice, accountId } = payload
+        const { productId, productName, productPrice, userToken } = payload
 
-        return axiosInst.put('/product/product-update', {productId, productName, productPrice, accountId})
+        return axiosInst.put('/product/product-update', {productId, productName, productPrice, userToken})
         .then ((res) => {
             alert('수정 성공!')
         })

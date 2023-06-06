@@ -13,7 +13,7 @@ const orderModule = "orderModule"
 export default {
     data () {
         return {
-            accountId: localStorage.getItem('loginUserId'),
+            userToken: localStorage.getItem('loginUserToken'),
             orders: [],
         // 테스트 용
         //     orders: [ 
@@ -36,7 +36,7 @@ export default {
         ...mapActions(orderModule, ['requestOrderListToSpring'])
     },
     async mounted() {
-        this.orders = await this.requestOrderListToSpring(this.accountId)
+        this.orders = await this.requestOrderListToSpring(this.userToken)
     }
 }
 </script>

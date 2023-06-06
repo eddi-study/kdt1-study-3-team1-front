@@ -32,7 +32,7 @@
 export default {
     data () {
         return {
-            accountId: localStorage.getItem('loginUserId'),
+            userToken: localStorage.getItem('loginUserToken'),
         }
     },
     props: {
